@@ -4,7 +4,10 @@ import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 
 const navLinks = [
+  { label: "Home", href: "#home" },
   { label: "About", href: "#about" },
+  { label: "Tools", href: "#tools" },
+  { label: "Experience", href: "#experience" },
   { label: "Works", href: "#works" },
   { label: "Contact", href: "#contact" },
 ]
@@ -25,7 +28,9 @@ export function Navbar() {
     setIsMenuOpen(false)
     const element = document.querySelector(href)
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" })
+      const headerOffset = 88
+      const targetTop = element.getBoundingClientRect().top + window.scrollY - headerOffset
+      window.scrollTo({ top: targetTop, behavior: "smooth" })
     }
   }
 
@@ -42,7 +47,7 @@ export function Navbar() {
         <nav className="flex items-center justify-between px-6 py-4 my-0 md:px-12 md:py-5">
           {/* Logo */}
           <a
-            href="#"
+            href="#home"
             onClick={(e) => {
               e.preventDefault()
               window.scrollTo({ top: 0, behavior: "smooth" })

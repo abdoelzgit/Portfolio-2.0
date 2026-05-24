@@ -24,7 +24,7 @@ export function HeroSection({ performanceMode = false }: { performanceMode?: boo
   }, [performanceMode]);
 
   return (
-    <section className="relative min-h-screen flex flex-col justify-center overflow-hidden">
+    <section id="home" className="relative min-h-screen flex flex-col justify-center overflow-hidden">
       {/* Animated sphere background */}
       {showSphere && !performanceMode ? (
         <motion.div

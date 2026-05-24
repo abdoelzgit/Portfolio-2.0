@@ -71,7 +71,7 @@ function MarqueeRow({ items, direction = "left" }: { items: string[]; direction?
 
 export function TechMarquee() {
   return (
-    <section className="relative py-24 overflow-hidden md:py-32">
+    <section id="tools" className="relative py-24 overflow-hidden md:py-32">
       {/* Section Header */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -80,7 +80,7 @@ export function TechMarquee() {
         transition={{ duration: 0.8 }}
         className="px-8 md:px-12 mb-16"
       >
-        <p className="font-mono text-xs tracking-[0.3em] text-muted-foreground mb-4">05 — TECHNICAL ARSENAL</p>
+        <p className="font-mono text-xs tracking-[0.3em] text-muted-foreground mb-4">03 — TOOLS LEARNED</p>
       </motion.div>
 
       {/* Marquee Rows */}

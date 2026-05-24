@@ -38,7 +38,7 @@ export function About() {
         transition={{ duration: 0.8 }}
         className="mb-14 md:mb-20"
       >
-        <p className="mb-4 font-mono text-xs tracking-[0.3em] text-muted-foreground">03 - ABOUT</p>
+        <p className="mb-4 font-mono text-xs tracking-[0.3em] text-muted-foreground">02 - ABOUT</p>
         <h2 className="max-w-4xl font-sans text-3xl font-light leading-tight md:text-5xl">
           Saya membangun portfolio produk yang seimbang antara estetika editorial, performa teknis, dan ritme iterasi yang cepat.
         </h2>
