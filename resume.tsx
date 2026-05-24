@@ -19,9 +19,10 @@ export const DATA = {
     "Typescript",
     "PHP",
     "Node.js",
+    "Next.js",
     "Laravel",
     "MySQL",
-    "Tailwind.css",
+    "PostgreSQL",
     "Figma",
     "Next.js",
     "Photoshop",
@@ -155,7 +156,7 @@ export const DATA = {
     {
       title: "SISMAKO",
       href: "https://github.com/Mufiz17/SISMAKO",
-      dates: "July 2024",
+      dates: "Jul 2024",
       active: true,
       description:
         "Developed a correspondence system for a Laravel-based internal communication platform developed in collaboration with fellow students. Enabled structured message exchange between staff and students with role-based access and message tracking.",
@@ -177,7 +178,7 @@ export const DATA = {
      {
       title: "Xinna",
       href: "https://github.com/abdoelzgit/Xinna",
-      dates: "January 2026",
+      dates: "Jan 2026",
       active: true,
       description:
         "Xinna is a cutting-edge Health-Tech application built using Next.js & Prisma. More than just a pharmacy inventory management system, it features an AI Health Agent (Google Gemini) for real-time symptom consultation. Designed with a premium aesthetic using Framer Motion and GSAP, Xinna offers a seamless and high-performance user experience.",

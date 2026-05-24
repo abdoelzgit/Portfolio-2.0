@@ -24,12 +24,7 @@ export function Experience() {
           <h2 className="max-w-3xl font-sans text-3xl font-light leading-tight md:text-5xl">Explore My Professional Journey</h2>
         </div>
 
-        <div className="md:col-span-5 md:pt-10">
-          <p className="max-w-md text-sm leading-relaxed text-foreground/75 md:text-base">
-            Perjalanan kerja yang membentuk pendekatan saya dalam membangun produk digital dengan keseimbangan antara visual,
-            sistem, dan eksekusi teknis.
-          </p>
-        </div>
+        
       </motion.div>
 
       <div className="border-t border-foreground/10">

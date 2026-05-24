@@ -1,36 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-
-const techItems = [
-  "NEXT.JS",
-  "REACT",
-  "TYPESCRIPT",
-  "PYTHON",
-  "PYTORCH",
-  "LATENCY",
-  "INTUITION",
-  "OPENAI",
-  "EMPATHY",
-  "WEBGL",
-  "NODE.JS",
-  "PRECISION",
-]
-
-const concepts = [
-  "ARCHITECTURE",
-  "SYSTEMS",
-  "INTERFACES",
-  "ALGORITHMS",
-  "EMERGENCE",
-  "COGNITION",
-  "SYNTHESIS",
-  "VELOCITY",
-  "ENTROPY",
-  "FLUX",
-  "AXIOM",
-  "TENSOR",
-]
+import { DATA } from "@/resume"
 
 function MarqueeRow({ items, direction = "left" }: { items: string[]; direction?: "left" | "right" }) {
   const duplicatedItems = [...items, ...items, ...items, ...items]
@@ -70,6 +41,11 @@ function MarqueeRow({ items, direction = "left" }: { items: string[]; direction?
 }
 
 export function TechMarquee() {
+  const tools = DATA.code.map((item) => item.toUpperCase())
+  const splitIndex = Math.ceil(tools.length / 2)
+  const firstRow = tools.slice(0, splitIndex)
+  const secondRow = tools.slice(splitIndex)
+
   return (
     <section id="tools" className="relative py-24 overflow-hidden md:py-32">
       {/* Section Header */}
@@ -85,8 +61,8 @@ export function TechMarquee() {
 
       {/* Marquee Rows */}
       <div className="space-y-4">
-        <MarqueeRow items={techItems} direction="left" />
-        <MarqueeRow items={concepts} direction="right" />
+        <MarqueeRow items={firstRow} direction="left" />
+        <MarqueeRow items={secondRow.length ? secondRow : firstRow} direction="right" />
       </div>
     </section>
   )

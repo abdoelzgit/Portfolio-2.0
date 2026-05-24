@@ -1,29 +1,30 @@
 "use client"
 
 import { motion } from "framer-motion"
+import { DATA } from "@/resume"
 
 const pillars = [
   {
     id: "01",
-    title: "System Thinking",
-    desc: "Saya merancang produk dari arsitektur sampai interaksi mikro agar alur tetap konsisten saat skala tumbuh.",
+    title: "Profile",
+    desc: DATA.description,
   },
   {
     id: "02",
-    title: "Human Clarity",
-    desc: "Setiap keputusan desain ditujukan untuk mengurangi beban kognitif, jadi pengguna cepat paham tanpa banyak instruksi.",
+    title: "Summary",
+    desc: DATA.summary,
   },
   {
     id: "03",
-    title: "AI-Native Delivery",
-    desc: "Workflow produk dibangun agar AI menjadi co-pilot nyata untuk riset, eksperimen, dan iterasi fitur harian.",
+    title: "Location",
+    desc: DATA.location,
   },
 ]
 
 const metrics = [
-  { label: "Projects Delivered", value: "26+" },
-  { label: "Years Building", value: "5" },
-  { label: "Avg. Release Cycle", value: "10 days" },
+  { label: "Work Experience", value: `${DATA.work.length}` },
+  { label: "Projects Built", value: `${DATA.projects.length}` },
+  { label: "Tech Stack", value: `${DATA.code.length}` },
 ]
 
 export function About() {
@@ -40,7 +41,7 @@ export function About() {
       >
         <p className="mb-4 font-mono text-xs tracking-[0.3em] text-muted-foreground">02 - ABOUT</p>
         <h2 className="max-w-4xl font-sans text-3xl font-light leading-tight md:text-5xl">
-          Saya membangun portfolio produk yang seimbang antara estetika editorial, performa teknis, dan ritme iterasi yang cepat.
+          {DATA.name} is a Front-end Developer and Graphic Designer focused on building visual digital experiences.
         </h2>
       </motion.div>
 
@@ -53,8 +54,7 @@ export function About() {
           className="md:col-span-5"
         >
           <p className="max-w-md text-base leading-relaxed text-foreground/80 md:text-lg">
-            Fokus saya adalah menciptakan pengalaman digital yang terasa presisi, mudah dipahami, dan tetap punya karakter visual yang
-            kuat. Dari discovery sampai launch, saya bekerja dengan pendekatan sistem, bukan sekadar layar per layar.
+            {DATA.summary}
           </p>
 
           <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-3 md:grid-cols-1">

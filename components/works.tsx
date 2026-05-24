@@ -5,77 +5,22 @@ import type React from "react"
 import { useEffect, useRef, useState } from "react"
 import { AnimatePresence, motion, useMotionValue, useSpring } from "framer-motion"
 import { ArrowUpRight, X } from "lucide-react"
+import { DATA } from "@/resume"
 
-const projects = [
-  {
-    title: "Neural Interface",
-    tags: ["Next.js", "OpenAI", "WebGL"],
-    image: "/abstract-neural-network-visualization-dark-theme.jpg",
-    year: "2024",
-    client: "Stealth AI SaaS",
-    role: "Product Designer + Frontend Engineer",
-    duration: "12 weeks",
-    overview:
-      "Platform conversational analytics untuk tim product research dengan visual intent-mapping secara real-time.",
-    challenge:
-      "Tim riset sulit membaca pola user intent dari ribuan percakapan karena dashboard terlalu teknis dan fragmented.",
-    solution:
-      "Membangun interface berbasis graph + semantic filters yang membuat insight penting muncul hanya dalam beberapa klik.",
-    impact: "Waktu analisis turun 43% dan proses validasi hipotesis naik 2.1x lebih cepat.",
-    href: "#",
-  },
-  {
-    title: "Quantum Dashboard",
-    tags: ["React", "D3.js", "Python"],
-    image: "/futuristic-data-dashboard-dark-minimal.jpg",
-    year: "2024",
-    client: "Enterprise Ops Team",
-    role: "Lead Interface Designer",
-    duration: "9 weeks",
-    overview:
-      "Command center untuk operasional multi-region yang menggabungkan alerting, forecasting, dan anomaly detection.",
-    challenge:
-      "Tim operasi harus berpindah antar tool untuk monitoring, membuat respon insiden lambat dan tidak konsisten.",
-    solution:
-      "Menyatukan semua signal kritikal dalam satu dashboard modular dengan hierarchy visual yang sangat tegas.",
-    impact: "Mean time to resolve incident membaik 31% pada kuartal pertama penggunaan.",
-    href: "#",
-  },
-  {
-    title: "Synthetic Memory",
-    tags: ["TypeScript", "LangChain", "Vector DB"],
-    image: "/abstract-memory-storage-visualization.jpg",
-    year: "2023",
-    client: "Innovation Lab",
-    role: "AI Product Builder",
-    duration: "14 weeks",
-    overview:
-      "Knowledge workspace berbasis retrieval untuk membantu tim support menjawab pertanyaan kompleks secara kontekstual.",
-    challenge:
-      "Dokumentasi tersebar di banyak sumber sehingga kualitas jawaban support tidak stabil antar anggota tim.",
-    solution:
-      "Merancang memory pipeline dengan retrieval ranking dan evaluasi kualitas jawaban langsung di alur kerja harian.",
-    impact: "First-response accuracy naik 28% dengan waktu onboarding agen baru lebih singkat.",
-    href: "#",
-  },
-  {
-    title: "Echo Protocol",
-    tags: ["Rust", "WebAssembly", "Audio"],
-    image: "/sound-wave-visualization-dark-theme.jpg",
-    year: "2023",
-    client: "Creative Audio Studio",
-    role: "Interaction Engineer",
-    duration: "10 weeks",
-    overview:
-      "Eksperimen web audio interaktif yang mengubah gesture pengguna menjadi komposisi suara adaptif.",
-    challenge:
-      "Performa audio di browser sering drop saat scene visual dan input gesture berjalan bersamaan.",
-    solution:
-      "Memindahkan proses audio kritikal ke WebAssembly dan mengoptimalkan pipeline rendering visual.",
-    impact: "Latency audio berkurang signifikan dan sesi interaksi terasa jauh lebih responsif.",
-    href: "#",
-  },
-]
+const projects = DATA.projects.map((project) => ({
+  title: project.title,
+  tags: project.technologies,
+  image: project.image,
+  year: project.dates,
+  client: "Personal / Collaboration",
+  role: "Frontend Developer",
+  duration: project.dates,
+  overview: project.description,
+  challenge: "Membangun pengalaman yang tetap intuitif sambil menjaga performa dan konsistensi visual di berbagai device.",
+  solution: "Menerapkan pendekatan komponen modular, pemilihan stack yang tepat, dan iterasi desain berbasis kebutuhan pengguna.",
+  impact: "Project berhasil dipublikasikan dan menjadi bukti implementasi nyata dari skill design + development.",
+  href: project.href,
+}))
 
 export function Works() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
@@ -124,7 +69,6 @@ export function Works() {
           className="mb-24"
         >
           <p className="font-mono text-xs tracking-[0.3em] text-muted-foreground mb-4">05 - SELECTED WORKS</p>
-          <h2 className="font-sans text-3xl md:text-5xl font-light italic">The Distortion Gallery</h2>
         </motion.div>
 
         <div ref={containerRef} onMouseMove={handleMouseMove} className="relative">
