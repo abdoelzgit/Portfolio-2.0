@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import { AnimatedSphere } from "./animated-sphere";
 import { TypingAnimation } from "@/components/ui/typing-animation";
 
@@ -12,17 +13,27 @@ const longestWord = words.reduce((longest, current) =>
 
 export function HeroSection() {
   const [isVisible, setIsVisible] = useState(false);
+  const [showSphere, setShowSphere] = useState(false);
 
   useEffect(() => {
     setIsVisible(true);
+    const timer = setTimeout(() => setShowSphere(true), 650);
+    return () => clearTimeout(timer);
   }, []);
 
   return (
     <section className="relative min-h-screen flex flex-col justify-center overflow-hidden">
       {/* Animated sphere background */}
-      <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[600px] h-[600px] lg:w-[800px] lg:h-[800px] opacity-40 pointer-events-none">
-        <AnimatedSphere />
-      </div>
+      {showSphere ? (
+        <motion.div
+          initial={{ opacity: 0, scale: 0.96 }}
+          animate={{ opacity: 0.4, scale: 1 }}
+          transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+          className="absolute right-0 top-1/2 -translate-y-1/2 w-[600px] h-[600px] lg:w-[800px] lg:h-[800px] pointer-events-none"
+        >
+          <AnimatedSphere />
+        </motion.div>
+      ) : null}
       
       {/* Subtle grid lines */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-30">
