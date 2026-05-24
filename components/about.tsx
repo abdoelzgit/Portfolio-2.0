@@ -41,7 +41,7 @@ export function About() {
       >
         <p className="mb-4 font-mono text-xs tracking-[0.3em] text-muted-foreground">02 - ABOUT</p>
         <h2 className="max-w-4xl font-sans text-3xl font-light leading-tight md:text-5xl">
-          {DATA.name} is a Front-end Developer and Graphic Designer focused on building visual digital experiences.
+          I turn ideas into visuals that people can feel and products they can truly use. 
         </h2>
       </motion.div>
 
