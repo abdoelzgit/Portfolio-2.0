@@ -21,6 +21,15 @@ const LOADER_EXIT_MS = 550
 export default function Home() {
   const [showLoader, setShowLoader] = useState(false)
   const [showApp, setShowApp] = useState(false)
+  const [performanceMode, setPerformanceMode] = useState(false)
+
+  useEffect(() => {
+    const smallScreen = window.matchMedia("(max-width: 900px)").matches
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    const lowCpu = (navigator.hardwareConcurrency ?? 8) <= 4
+    const lowMemory = ((navigator as Navigator & { deviceMemory?: number }).deviceMemory ?? 8) <= 4
+    setPerformanceMode(smallScreen || reducedMotion || lowCpu || lowMemory)
+  }, [])
 
   useEffect(() => {
     const hasSeenLoader = sessionStorage.getItem("hasSeenLoader")
@@ -45,15 +54,15 @@ export default function Home() {
 
       {showApp ? (
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5, ease: "easeOut" }}>
-          <SmoothScroll>
+          <SmoothScroll enabled={!performanceMode}>
             <CustomCursor />
             <Navbar />
             <main>
-              <HeroSection />
+              <HeroSection performanceMode={performanceMode} />
               {/* <Hero /> */}
               {/* <SectionBlend /> */}
-              <TechMarquee />
               <About />
+              <TechMarquee />
               <Experience />
               <Works />
               <Footer />

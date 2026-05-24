@@ -28,7 +28,7 @@ const metrics = [
 
 export function About() {
   return (
-    <section id="about" className="relative px-8 py-28 md:px-12 md:py-32">
+    <section id="about" className="relative px-8 py-8 md:px-12 md:py-16">
       <div className="absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-foreground/20 to-transparent md:inset-x-12" />
 
       <motion.div

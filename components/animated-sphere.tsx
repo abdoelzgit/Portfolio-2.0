@@ -38,6 +38,7 @@ export function AnimatedSphere() {
     const render = (now: number) => {
       frameRef.current = requestAnimationFrame(render);
       if (!isInView) return;
+      if (document.body.dataset.modalOpen === "true") return;
       if (now - last < frameInterval) return;
       last = now;
 

@@ -20,7 +20,7 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: "AI-Native Product Builder | Portfolio",
+  title: "Abdoelzport 2.0",
   description: "System Architect & Interface Designer crafting intelligent digital experiences",
     generator: 'v0.app'
 }

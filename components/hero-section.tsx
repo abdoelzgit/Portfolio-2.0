@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { ArrowUpRight, ChevronRight, Download } from "lucide-react";
 import { AnimatedSphere } from "./animated-sphere";
 import { TypingAnimation } from "@/components/ui/typing-animation";
 
@@ -11,20 +12,21 @@ const longestWord = words.reduce((longest, current) =>
   words[0] ?? ""
 );
 
-export function HeroSection() {
+export function HeroSection({ performanceMode = false }: { performanceMode?: boolean }) {
   const [isVisible, setIsVisible] = useState(false);
   const [showSphere, setShowSphere] = useState(false);
 
   useEffect(() => {
     setIsVisible(true);
+    if (performanceMode) return;
     const timer = setTimeout(() => setShowSphere(true), 650);
     return () => clearTimeout(timer);
-  }, []);
+  }, [performanceMode]);
 
   return (
     <section className="relative min-h-screen flex flex-col justify-center overflow-hidden">
       {/* Animated sphere background */}
-      {showSphere ? (
+      {showSphere && !performanceMode ? (
         <motion.div
           initial={{ opacity: 0, scale: 0.96 }}
           animate={{ opacity: 0.4, scale: 1 }}
@@ -34,7 +36,7 @@ export function HeroSection() {
           <AnimatedSphere />
         </motion.div>
       ) : null}
-      
+
       {/* Subtle grid lines */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-30">
         {[...Array(8)].map((_, i) => (
@@ -60,26 +62,24 @@ export function HeroSection() {
           />
         ))}
       </div>
-      
+
       <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12 py-32 lg:py-40">
         {/* Eyebrow */}
-        <div 
-          className={`mb-8 transition-all duration-700 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-          }`}
+        <div
+          className={`mb-8 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+            }`}
         >
           <span className="inline-flex items-center gap-3 text-sm font-mono text-muted-foreground">
             <span className="w-8 h-px bg-foreground/30" />
             Hello, It's Bedul here.
           </span>
         </div>
-        
+
         {/* Main headline */}
         <div className="mb-12">
-          <h1 
-            className={`text-[clamp(2rem,8vw,8rem)] font-display leading-[0.9] tracking-tight transition-all duration-1000 ${
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            }`}
+          <h1
+            className={`text-[clamp(2rem,8vw,8rem)] font-display leading-[0.9] tracking-tight transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              }`}
           >
             <span className="block">The man who </span>
             <span className="block">
@@ -101,43 +101,41 @@ export function HeroSection() {
             </span>
           </h1>
         </div>
-        
+
         {/* Description */}
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-end">
-          <p 
-            className={`text-xl lg:text-2xl text-muted-foreground leading-relaxed max-w-xl transition-all duration-700 delay-200 ${
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-            }`}
+          <div
+            className={`transition-all duration-700 delay-200 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+              }`}
           >
-            Your toolkit to stop configuring and start innovating. 
-            Securely build, deploy, and scale the best experiences.
-          </p>
-          
-          {/* CTAs */}
-          {/* <div 
-            className={`flex flex-col sm:flex-row items-start gap-4 transition-all duration-700 delay-300 ${
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-            }`}
-          >
-            <Button 
-              size="lg" 
-              className="bg-foreground hover:bg-foreground/90 text-background px-8 h-14 text-base rounded-full group"
-            >
-              Start free trial
-              <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
-            </Button>
-            <Button 
-              size="lg" 
-              variant="outline" 
-              className="h-14 px-8 text-base rounded-full border-foreground/20 hover:bg-foreground/5"
-            >
-              Watch demo
-            </Button>
-          </div> */}
+            <p className="text-xl lg:text-2xl text-muted-foreground leading-relaxed max-w-xl">
+              I love building visual experiences and creating compelling designs.
+            </p>
+
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+
+              <span className="inline-flex items-center gap-3 text-sm font-mono text-muted-foreground">
+                {/* <span className="w-8 h-px bg-foreground/30" /> */}
+                My Resume <ChevronRight/>
+              </span>
+
+              <a
+                href="/cv.pdf"
+                download
+                data-cursor-hover
+                className="group inline-flex h-12 items-center justify-center gap-2 border border-foreground/20 px-6 text-sm font-mono tracking-[0.12em] uppercase text-foreground/85 transition-colors duration-300 hover:bg-foreground hover:text-background"
+              >
+                Download CV
+                <Download className="h-4 w-4 transition-transform duration-300 group-hover:translate-y-0.5" />
+              </a>
+            </div>
+          </div>
+
+          <div />
         </div>
-        
+
       </div>
-      
+
       {/* Stats marquee - full width outside container */}
       {/* <div 
         className={`absolute bottom-24 left-0 right-0 transition-all duration-700 delay-500 ${
@@ -165,9 +163,9 @@ export function HeroSection() {
           ))}
         </div>
       </div> */}
-      
+
       {/* Scroll indicator */}
-      
+
     </section>
   );
 }
