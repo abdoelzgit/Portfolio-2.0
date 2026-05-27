@@ -53,7 +53,7 @@ export function About() {
           transition={{ duration: 0.7, delay: 0.1 }}
           className="md:col-span-5"
         >
-          <p className="max-w-md text-base leading-relaxed text-foreground/80 md:text-lg">
+          <p className="max-w-md text-justify leading-relaxed text-foreground/80 md:text-lg">
             {DATA.summary}
           </p>
 
@@ -90,7 +90,7 @@ export function About() {
                   <span className="mt-1 font-mono text-[11px] tracking-[0.24em] text-muted-foreground">{pillar.id}</span>
                   <div>
                     <h3 className="font-sans text-2xl font-light tracking-tight md:text-3xl">{pillar.title}</h3>
-                    <p className="mt-3 max-w-2xl text-sm leading-relaxed text-foreground/75 md:text-base">{pillar.desc}</p>
+                    <p className="mt-3 max-w-2xl text-sm leading-relaxed text-foreground/75 md:text-justify">{pillar.desc}</p>
                   </div>
                 </div>
               </motion.article>

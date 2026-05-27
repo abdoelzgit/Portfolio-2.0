@@ -120,8 +120,8 @@ export function HeroSection({ performanceMode = false }: { performanceMode?: boo
               </span>
 
               <a
-                href="/cv.pdf"
-                download
+                href="/CV-Mhmdabdalaziz-2026.pdf"
+                download="CV-Mhmdabdalaziz-2026.pdf"
                 data-cursor-hover
                 className="group inline-flex h-12 items-center justify-center gap-2 border border-foreground/20 px-6 text-sm font-mono tracking-[0.12em] uppercase text-foreground/85 transition-colors duration-300 hover:bg-foreground hover:text-background"
               >

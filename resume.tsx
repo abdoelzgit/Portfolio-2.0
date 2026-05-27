@@ -11,7 +11,7 @@ export const DATA = {
   description:
     "Front-end Dev, Graphic Designer. I love building visual experiences and creating compelling designs.",
   summary:
-    "Vocational high school student passionate about web programming and creative world, including photography and digital media. Skilled in front-end development with hands-on experience building web applications and creating visual content. Motivated to grow by gaining real-world experience in a professional environment.",
+    "Fresh graduate with experience in web development and visual design, passionate about AI and Large Language Model (LLM) technologies, particularly in interactive and visually driven digital experiences. Skilled in building modern web applications and interactive digital products that combine AI, web technology, and visual storytelling.",
   avatarUrl: "/abdoelz.png",
   code: [
     "React",
@@ -117,6 +117,7 @@ export const DATA = {
       href: "https://smktibazma-v2.vercel.app/",
       dates: "Oct 2024 ",
       active: true,
+      role: "Frontend Developer",
       description:
         "SMK TI BAZMA s profile website, built with Next.js, showcases the school s programs, achievements, and facilities in a modern and responsive design.",
       technologies: [
@@ -141,6 +142,7 @@ export const DATA = {
       href: "https://www.figma.com/design/B8mJg6ercv83dlJ9Z1mGx7/Stemify---E-learning-Mobile-Apps?node-id=2002-10&t=stkHJZoVhor3wh6N-1",
       dates: "Aug 2024",
       active: true,
+      role: "UI/UX Designer",
       description:
         "An E-learning app design created using Figma, focusing on intuitive navigation, a clean layout,  engaging visuals to enhance the learning experience in STEM education.",
       technologies: ["Figma", "Illustrator"],
@@ -153,33 +155,34 @@ export const DATA = {
       ],
       image: "/project2.png",
     },
-    {
-      title: "SISMAKO",
-      href: "https://github.com/Mufiz17/SISMAKO",
-      dates: "Jul 2024",
-      active: true,
-      description:
-        "Developed a correspondence system for a Laravel-based internal communication platform developed in collaboration with fellow students. Enabled structured message exchange between staff and students with role-based access and message tracking.",
-      technologies: [
-        "Laravel 11",
-        "Bootstrap",
-        "MySQL",
-        "Javascript"
-      ],
-      links: [
-        {
-          type: "Get in Touch",
-          href: "https://github.com/Mufiz17/SISMAKO",
-          icon: <Icons.globe className="size-3" />,
-        },
-      ],
-      image: "/project3.png",
-    },
+    // {
+    //   title: "SISMAKO",
+    //   href: "https://github.com/Mufiz17/SISMAKO",
+    //   dates: "Jul 2024",
+    //   active: true,
+    //   description:
+    //     "Developed a correspondence system for a Laravel-based internal communication platform developed in collaboration with fellow students. Enabled structured message exchange between staff and students with role-based access and message tracking.",
+    //   technologies: [
+    //     "Laravel 11",
+    //     "Bootstrap",
+    //     "MySQL",
+    //     "Javascript"
+    //   ],
+    //   links: [
+    //     {
+    //       type: "Get in Touch",
+    //       href: "https://github.com/Mufiz17/SISMAKO",
+    //       icon: <Icons.globe className="size-3" />,
+    //     },
+    //   ],
+    //   image: "/project3.png",
+    // },
      {
       title: "Xinna",
       href: "https://github.com/abdoelzgit/Xinna",
-      dates: "Jan 2026",
+      dates: "Feb 2026",
       active: true,
+      role: "Fullstack Developer",
       description:
         "Xinna is a cutting-edge Health-Tech application built using Next.js & Prisma. More than just a pharmacy inventory management system, it features an AI Health Agent (Google Gemini) for real-time symptom consultation. Designed with a premium aesthetic using Framer Motion and GSAP, Xinna offers a seamless and high-performance user experience.",
       technologies: [
@@ -198,6 +201,31 @@ export const DATA = {
         },
       ],
       image: "/project4.png",
+    },
+    {
+      title: "Cyberdome",
+      href: "#",
+      dates: "Apr 2026",
+      active: true,
+      role: "Fullstack Engineer",
+      description:
+        "Built a real-time Cyber Threat Map dashboard to visualize live cyber attacks by integrating Wazuh SIEM endpoints through a low-latency streaming pipeline using WebSocket/SSE, and designed an admin panel to manage APIs and endpoints dynamically.",
+      technologies: [
+        "Next.js",
+        "Express.js",
+        "Tailwindcss",
+        "Socket.IO",
+        "Wazuh",
+        "PostgreSQL"
+      ],
+      links: [
+        {
+          type: "Get in Touch",
+          href: "https://github.com/abdoelzgit/Xinna",
+          icon: <Icons.globe className="size-3" />,
+        },
+      ],
+      image: "/project5.png",
     },
   ],
   portfolio: [

@@ -13,7 +13,7 @@ const projects = DATA.projects.map((project) => ({
   image: project.image,
   year: project.dates,
   client: "Personal / Collaboration",
-  role: "Frontend Developer",
+  role: project.role,
   duration: project.dates,
   overview: project.description,
   challenge: "Membangun pengalaman yang tetap intuitif sambil menjaga performa dan konsistensi visual di berbagai device.",
@@ -235,17 +235,17 @@ export function Works() {
                     <div className="grid gap-6 md:grid-cols-2">
                       <article className="border border-foreground/15 p-5">
                         <p className="font-mono text-[10px] tracking-[0.22em] text-muted-foreground">CHALLENGE</p>
-                        <p className="mt-3 text-sm leading-relaxed text-foreground/75 md:text-base">{selectedProject.challenge}</p>
+                        <p className="mt-3 text-sm leading-relaxed text-foreground/75 md:text-justify">{selectedProject.challenge}</p>
                       </article>
                       <article className="border border-foreground/15 p-5">
                         <p className="font-mono text-[10px] tracking-[0.22em] text-muted-foreground">SOLUTION</p>
-                        <p className="mt-3 text-sm leading-relaxed text-foreground/75 md:text-base">{selectedProject.solution}</p>
+                        <p className="mt-3 text-sm leading-relaxed text-foreground/75 md:text-justify">{selectedProject.solution}</p>
                       </article>
                     </div>
 
                     <article className="border border-foreground/15 p-5 md:p-6">
                       <p className="font-mono text-[10px] tracking-[0.22em] text-muted-foreground">IMPACT</p>
-                      <p className="mt-3 text-base leading-relaxed text-foreground/80 md:text-lg">{selectedProject.impact}</p>
+                      <p className="mt-3 text-justify leading-relaxed text-foreground/80 md:text-lg">{selectedProject.impact}</p>
                     </article>
 
                     <div className="flex flex-wrap gap-2">

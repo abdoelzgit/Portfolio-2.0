@@ -52,8 +52,11 @@ export function Experience() {
                   </div>
 
                   <div className="md:col-span-4">
-                    <p className="text-sm leading-relaxed text-foreground/80 md:text-base">
-                      {item.title}, {item.location}
+                    <p className="text-sm leading-relaxed text-foreground/80 md:text-justify">
+                      {item.title}
+                    </p>
+                    <p className="text-[11px]  mt-1 font-mono leading-relaxed text-muted-foreground md:text-justify">
+                       {item.location}
                     </p>
                   </div>
 
@@ -93,7 +96,7 @@ export function Experience() {
                     <div className="md:grid md:grid-cols-12 md:gap-8">
                       <div className="md:col-span-5" />
                       <div className="md:col-span-4">
-                        <p className="text-sm leading-relaxed text-foreground/70 md:text-base">{item.description}</p>
+                        <p className="text-sm leading-relaxed text-foreground/70 md:text-justify">{item.description}</p>
                       </div>
 
                       <div className="mt-5 md:col-span-3 md:mt-0 md:flex md:justify-end">
