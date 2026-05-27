@@ -6,18 +6,18 @@ import { DATA } from "@/resume"
 const pillars = [
   {
     id: "01",
-    title: "Profile",
-    desc: DATA.description,
+    title: "Visual Craftsmanship",
+    desc: "Dedicated to a high-level focus on pixel-perfect details, modern aesthetics, and clean, engaging visuals to create an unforgettable first impression.",
   },
   {
     id: "02",
-    title: "Summary",
-    desc: DATA.summary,
+    title: "Scalable Engineering",
+    desc: "Implementing clean code standards, adaptive modular architecture, ultra-fast loading performance, and smooth micro-interactions across various device sizes.",
   },
   {
     id: "03",
-    title: "Location",
-    desc: DATA.location,
+    title: "AI & Adaptability",
+    desc: "Enthusiastic exploration of emerging AI/LLM technologies, and the agility to adapt rapidly to solve complex problems creatively.",
   },
 ]
 

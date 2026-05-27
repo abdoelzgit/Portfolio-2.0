@@ -12,13 +12,13 @@ const projects = DATA.projects.map((project) => ({
   tags: project.technologies,
   image: project.image,
   year: project.dates,
-  client: "Personal / Collaboration",
+  client: (project as any).projectType || "Personal / Collaboration",
   role: project.role,
   duration: project.dates,
   overview: project.description,
-  challenge: "Membangun pengalaman yang tetap intuitif sambil menjaga performa dan konsistensi visual di berbagai device.",
-  solution: "Menerapkan pendekatan komponen modular, pemilihan stack yang tepat, dan iterasi desain berbasis kebutuhan pengguna.",
-  impact: "Project berhasil dipublikasikan dan menjadi bukti implementasi nyata dari skill design + development.",
+  challenge: (project as any).challenge || "Building an experience that remains intuitive while maintaining performance and visual consistency across various devices.",
+  solution: (project as any).solution || "Applying a modular component approach, proper stack selection, and design iterations based on user needs.",
+  impact: (project as any).impact || "The project was successfully published and stands as concrete proof of design and development skills implementation.",
   href: project.href,
 }))
 
@@ -176,28 +176,32 @@ export function Works() {
               </div>
 
               <div className="overflow-y-auto overscroll-contain touch-pan-y" data-lenis-prevent>
-                <div className="relative h-[40vh] min-h-[260px] w-full overflow-hidden border-b border-foreground/10 md:h-[52vh]">
-                  {!modalReady ? (
-                    <div className="absolute inset-0 animate-pulse bg-foreground/5" />
-                  ) : null}
-                  <img
-                    src={selectedProject.image}
-                    alt={selectedProject.title}
-                    className={`h-full w-full object-cover transition-opacity duration-300 ${modalReady ? "opacity-100" : "opacity-0"}`}
-                    loading="lazy"
-                    onLoad={() => setModalReady(true)}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/20 to-transparent" />
-                  <div className="absolute bottom-0 left-0 right-0 p-6 md:p-10">
-                    <p className="font-mono text-xs tracking-[0.22em] text-background/85">{selectedProject.year}</p>
-                    <h3 className="mt-2 max-w-4xl font-sans text-4xl font-light tracking-tight text-white md:text-6xl">
+                {/* Rounded rectangle banner containing the image with fullscreen aspect ratio (16:9) */}
+                <div className="p-4 md:p-6 lg:p-8 pb-0 md:pb-0 lg:pb-0">
+                  {/* Title and year placed above the image */}
+                  <div className="mb-6 md:mb-8">
+                    <p className="font-mono text-xs tracking-[0.22em] text-muted-foreground">{selectedProject.year}</p>
+                    <h3 className="mt-2 max-w-4xl font-sans text-3xl font-light tracking-tight text-foreground md:text-5xl lg:text-6xl">
                       {selectedProject.title}
                     </h3>
+                  </div>
+
+                  <div className="relative aspect-video w-full overflow-hidden rounded-2xl md:rounded-3xl border border-foreground/10 bg-foreground/5">
+                    {!modalReady ? (
+                      <div className="absolute inset-0 animate-pulse bg-foreground/5" />
+                    ) : null}
+                    <img
+                      src={selectedProject.image}
+                      alt={selectedProject.title}
+                      className={`h-full w-full object-cover transition-opacity duration-300 ${modalReady ? "opacity-100" : "opacity-0"}`}
+                      loading="lazy"
+                      onLoad={() => setModalReady(true)}
+                    />
                   </div>
                 </div>
 
                 <div
-                  className={`grid gap-10 px-6 py-10 md:grid-cols-12 md:px-10 md:py-12 transition-opacity duration-300 ${
+                  className={`grid gap-10 px-6 py-8 md:grid-cols-12 md:px-10 md:py-12 transition-opacity duration-300 ${
                     modalReady ? "opacity-100" : "opacity-0"
                   }`}
                 >
