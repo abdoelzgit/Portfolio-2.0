@@ -35,25 +35,16 @@ export const DATA = {
     social: {
       GitHub: {
         name: "GitHub",
-        url: "https://github.com/Abdul-liebert",
+        url: "https://github.com/abdoelzgit",
         icon: Icons.github,
 
         navbar: true,
       },
-      Credit: {
-        url: "https://dillion.io/",
-      },
+      
       LinkedIn: {
         name: "LinkedIn",
-        url: "https://dub.sh/dillion-linkedin",
+        url: "https://www.linkedin.com/in/mabdullahalaziz/",
         icon: Icons.linkedin,
-
-        navbar: true,
-      },
-      whatsapp: {
-        name: "Contact Me",
-        url: "https://dub.sh/dillion-twitter",
-        icon: Icons.phone,
 
         navbar: true,
       },
@@ -66,7 +57,7 @@ export const DATA = {
       },
       email: {
         name: "Send Email",
-        url: "#",
+        url: "mailto:abdoelzprof@gmail.com",
         icon: Icons.email,
 
         navbar: false,

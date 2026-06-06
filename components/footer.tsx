@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 import { ArrowUpRight } from "lucide-react"
+import { DATA } from "@/resume"
 
 export function Footer() {
   const [time, setTime] = useState("")
@@ -27,7 +28,7 @@ export function Footer() {
     <footer id="contact" className="relative">
       {/* Main CTA */}
       <motion.a
-        href="mailto:abdoelzprof@gmail.com"
+        href={DATA.contact.social.email.url}
         data-cursor-hover
         className="relative block overflow-hidden"
         onMouseEnter={() => setIsHovered(true)}
@@ -78,16 +79,20 @@ export function Footer() {
 
           {/* Links */}
           <div className="flex gap-8">
-            {["LinkedIn", "GitHub", "Twitter"].map((link) => (
-              <a
-                key={link}
-                href="#"
-                data-cursor-hover
-                className="font-mono text-xs tracking-widest text-muted-foreground hover:text-foreground transition-colors duration-300"
-              >
-                {link}
-              </a>
-            ))}
+            {Object.entries(DATA.contact.social)
+              .filter(([key]) => key !== "email")
+              .map(([key, social]) => (
+                <a
+                  key={key}
+                  href={social.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  data-cursor-hover
+                  className="font-mono text-xs tracking-widest text-muted-foreground hover:text-foreground transition-colors duration-300"
+                >
+                  {social.name}
+                </a>
+              ))}
           </div>
 
           {/* Copyright */}
